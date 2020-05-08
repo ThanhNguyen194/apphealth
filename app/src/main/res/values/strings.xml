@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">apphealth</string>
+    <string name="mainScreen">Trang chủ</string>
+    <string name="login">Đăng nhập</string>
+    <string name="personInformation">Thông tin cá nhân</string>
+    <string name="Open">Mở</string>
+    <string name="Close">Đóng</string>
+    <string name="setting">Cài đặt</string>
+    <string name="profileavatar">Xem thông tin cá nhân</string>
+    <string name="diagnosis">Tự chẩn đoán</string>
+    <string name="todo">TODO</string>
+    <string name="schedule_drug">Đặt lịch uống thuốc</string>
+    <string name="findmedicalcenter">Tìm cơ sở y tế</string>
+    <string name="askdoctor">Hỏi bác sĩ</string>
+    <string name="medicalmanager">Quản lý hồ sơ y tế</string>
+    <string name="editaccount">Nhập tài khoản</string>
+    <string name="editpassword">Nhập mật khẩu</string>
+    <string name="forgotpassword">Quên mật khẩu?</string>
+    <string name="username">Tài khoản</string>
+    <string name="newuser_signup">Chưa có tài khoản? đăng ký ngay</string>
+    <string name="welcome">Chào mừng</string>
+    <string name="introText">Đăng ký để theo dõi sức khỏe của bạn từ bây giờ</string>
+    <string name="fullname">Họ và tên</string>
+    <string name="email">Email</string>
+    <string name="phonenumber">Số điện thoại</string>
+    <string name="password">Mật khẩu</string>
+    <string name="signup">Đăng ký</string>
+    <string name="alreadyhaveaccount">Đã có tài khoản? Đăng nhập ngay</string>
+    <string name="logout">Đăng xuất</string>
+    <string name="inputotp">Nhập OTP</string>
+    <string name="phoneno_verify">Xác minh số điện thoại</string>
+    <string name="verify">Xác minh</string>
+</resources>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "461906842684",
+    "firebase_url": "https://apphealth-b6de0.firebaseio.com",
+    "project_id": "apphealth-b6de0",
+    "storage_bucket": "apphealth-b6de0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:461906842684:android:7d329b46f4f976b4519f39",
+        "android_client_info": {
+          "package_name": "com.thesis.apphealth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "461906842684-4el9rpugo9gmr27u7346i0gitq36sjgc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.thesis.apphealth",
+            "certificate_hash": "4ab81c7ee31b7dcb2834244431a829ee33c6a0a1"
+          }
+        },
+        {
+          "client_id": "461906842684-0272fkaieel6ldd170rqvb2mcsuf5ajo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPLTnlnNEX3P5miniZVc7jgAzYZgdo4t4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "461906842684-0272fkaieel6ldd170rqvb2mcsuf5ajo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
