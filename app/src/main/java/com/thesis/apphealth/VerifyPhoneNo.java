@@ -34,9 +34,23 @@ public class VerifyPhoneNo extends AppCompatActivity {
         verify_btn=findViewById(R.id.verify_btn);
         verifyCodeEnteredByTheUser=findViewById(R.id.otpnumber);
         progressBar=findViewById(R.id.progress_bar);
+        progressBar.setVisibility(View.GONE);
         
         String phoneNo = getIntent().getStringExtra("phoneNo");
         sendVeriFicationCodeToUser(phoneNo);
+        verify_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String code = verifyCodeEnteredByTheUser.getText().toString();
+                if(code.isEmpty()||code.length()<6){
+                    verifyCodeEnteredByTheUser.setError("OTP có ít nhất 6 chữ số");
+                    verifyCodeEnteredByTheUser.requestFocus();
+                    return;
+                }
+                progressBar.setVisibility(View.VISIBLE);
+                verifyCode(code);
+            }
+        });
 
     }
 
@@ -48,7 +62,8 @@ public class VerifyPhoneNo extends AppCompatActivity {
                 TaskExecutors.MAIN_THREAD,               // Activity (for callback binding)
                 mCallbacks);        // OnVerificationStateChangedCallbacks
     }
-    private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks= new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+    private PhoneAuthProvider.OnVerificationStateChangedCallbacks
+            mCallbacks= new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
         @Override
         public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
             super.onCodeSent(s, forceResendingToken);
@@ -70,15 +85,15 @@ public class VerifyPhoneNo extends AppCompatActivity {
 
         }
     };
-    private void verifyCode(String verificationCodeByUser){
-        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationCodeByUser,verificationCodeBySystem);
+    private void verifyCode(String CodeByUser){
+        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationCodeBySystem,CodeByUser);
         signIntheUserByCredential(credential);
 
     }
-
     private void signIntheUserByCredential(PhoneAuthCredential credential) {
         FirebaseAuth firebaseAuth =FirebaseAuth.getInstance();
-        firebaseAuth.signInWithCredential(credential).addOnCompleteListener(VerifyPhoneNo.this, new OnCompleteListener<AuthResult>() {
+        firebaseAuth.signInWithCredential(credential)
+                .addOnCompleteListener(VerifyPhoneNo.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {

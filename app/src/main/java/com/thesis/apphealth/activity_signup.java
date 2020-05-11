@@ -143,7 +143,7 @@ public class activity_signup extends AppCompatActivity {
         String Email=regEmail.getEditText().getText().toString();
         String PhoneNo=regPhoneNo.getEditText().getText().toString();
         String Password=regPassword.getEditText().getText().toString();
-        Intent intent = new Intent(activity_signup.this,VerifyPhoneNo.class);
+        Intent intent = new Intent(getApplicationContext(),VerifyPhoneNo.class);
         intent.putExtra("phoneNo",PhoneNo);
         startActivity(intent);
 
