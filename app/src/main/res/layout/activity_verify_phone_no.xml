@@ -1,55 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="60dp"
-    android:orientation="vertical"
-    android:padding="50dp"
-    tools:context=".VerifyPhoneNo">
+    android:layout_height="match_parent"
+    android:background="@color/colorbackground">
 
-    <ImageView
-        android:id="@+id/logo_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="1"
-        app:srcCompat="@mipmap/diagnosisimage_foreground" />
-    <TextView
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center"
-        android:text="@string/phoneno_verify" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="50dp"
         android:orientation="vertical"
-        android:layout_marginTop="20dp">
+        android:padding="50dp"
+        tools:context=".ui.Auth.VerifyPhoneNo"
+        tools:ignore="MissingConstraints">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/inputotp"
-        android:textSize="12dp"
-        android:id="@+id/otpnumber"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/verify_btn"
-            android:text="@string/verify"
-            android:textColor="@color/darkGray"
-            android:background="@color/colorbutton"
-            android:layout_marginTop="@dimen/magin"/>
-        <ProgressBar
+        <ImageView
+            android:id="@+id/logo_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/magin"
-            android:id="@+id/progress_bar"/>
-    </LinearLayout>
+            android:layout_marginTop="60dp"
+            android:layout_weight="1"
+            app:srcCompat="@mipmap/diagnosisimage_foreground" />
 
-</LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="@string/phoneno_verify" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:padding="50dp">
+
+            <EditText
+                android:id="@+id/otpnumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/inputotp"
+                android:textSize="12dp" />
+
+            <Button
+                android:id="@+id/verify_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/magin"
+                android:background="@color/colorbutton"
+                android:text="@string/verify"
+                android:textColor="@color/darkGray" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/magin" />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

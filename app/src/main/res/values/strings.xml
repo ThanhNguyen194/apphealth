@@ -30,4 +30,16 @@
     <string name="inputotp">Nhập OTP</string>
     <string name="phoneno_verify">Xác minh số điện thoại</string>
     <string name="verify">Xác minh</string>
+    <string name="birthofdate">Ngày sinh</string>
+    <string name="sex">Giới tính</string>
+    <string name="bloodtype">Nhóm máu</string>
+    <string name="nationalID">CMND</string>
+    <string name="address">Địa chỉ</string>
+    <string name="populadisease">Bệnh phổ biến</string>
+    <string name="asksymptom">Triệu chứng của bạn là gì?</string>
+    <string name="symptom">Nhập triệu chứng</string>
+    <string name="findmedicalocation">Tìm cơ sở y tế</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

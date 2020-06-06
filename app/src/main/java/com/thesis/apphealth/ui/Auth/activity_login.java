@@ -1,7 +1,8 @@
-package com.thesis.apphealth;
+package com.thesis.apphealth.ui.Auth;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Pair;
 import android.view.View;
@@ -20,12 +21,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.thesis.apphealth.MainActivity;
+import com.thesis.apphealth.R;
 
 public class activity_login extends AppCompatActivity {
     Button callSignUp,login_btn;
     ImageView image;
     TextView logoText;
     TextInputLayout username,password;
+    SharedPreferences settings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +47,7 @@ public class activity_login extends AppCompatActivity {
         callSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(activity_login.this,activity_signup.class);
+                Intent intent = new Intent(activity_login.this, activity_signup.class);
                 Pair[]pairs= new Pair[1];
                 pairs[0]=new Pair<View,String>(image,"logo_image");
                 /*pairs[1]=new Pair<View,String>(logoText,"login_text");
@@ -114,7 +118,7 @@ public class activity_login extends AppCompatActivity {
                         String phoneNoFormDB=dataSnapshot.child(userEnteredUsername).child("phoneNo").getValue(String.class);
                         String emailFormDB=dataSnapshot.child(userEnteredUsername).child("email").getValue(String.class);
                         String usernameFormDB=dataSnapshot.child(userEnteredUsername).child("userName").getValue(String.class);
-                        Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+                        Intent intent=new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(intent);
                     }else{
                         password.setError("Mật khẩu không chính xác");
@@ -133,5 +137,8 @@ public class activity_login extends AppCompatActivity {
     }
     public void setCallSignUpScreen(View view){
 
+    }
+    public void onBackPressed() {
+        //do nothing
     }
 }

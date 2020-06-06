@@ -13,6 +13,8 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.thesis.apphealth.ui.Auth.activity_login;
+
 public class SplashActivity extends AppCompatActivity {
 
     Animation topAnim,bottomAnim;
@@ -35,7 +37,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent=new Intent(SplashActivity.this,activity_login.class);
+                Intent intent=new Intent(SplashActivity.this, activity_login.class);
 /*                startActivity(intent);
                 finish();*/
                 Pair[] pairs=new Pair[1];

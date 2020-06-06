@@ -1,6 +1,15 @@
 package com.thesis.apphealth.data;
-public class UserInfomation {
-    String FullName,UserName,Email,PhoneNo,Password;
+
+public class UserInfomation  {
+    public String getUserID() {
+        return UserID;
+    }
+
+    public void setUserID(String userID) {
+        UserID = userID;
+    }
+
+    String UserID,FullName,UserName,Email,PhoneNo,Password;
 
     public String getFullName() {
         return FullName;
@@ -53,5 +62,6 @@ public class UserInfomation {
     public UserInfomation(String fullName) {
         FullName = fullName;
     }
+    public UserInfomation(){}
 
 }

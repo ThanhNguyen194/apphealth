@@ -7,4 +7,6 @@
     <color name="color">#0C8A7E</color>
     <color name="darkGray">#2C2C2C</color>
     <color name="colorbutton">#61C3AA</color>
+    <color name="colorbackground">#FFFFFF</color>
+    <color name="lightGray">#979696</color>
 </resources>

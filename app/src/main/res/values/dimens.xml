@@ -2,4 +2,7 @@
 <resources>
     <dimen name="magin">10dp</dimen>
     <dimen name="image_magin_top">15dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_height">150dp</dimen>
 </resources>

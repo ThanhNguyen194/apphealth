@@ -1,4 +1,4 @@
-package com.thesis.apphealth;
+package com.thesis.apphealth.ui.Auth;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.thesis.apphealth.R;
 
 public class activity_signup extends AppCompatActivity {
     TextInputLayout regFullName,regUsername,regPassword,regEmail,regPhoneNo;
@@ -44,7 +45,7 @@ public class activity_signup extends AppCompatActivity {
         loginSignupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(activity_signup.this,activity_login.class);
+                Intent intent = new Intent(activity_signup.this, activity_login.class);
                 startActivity(intent);
                 finish();
             }
@@ -143,8 +144,11 @@ public class activity_signup extends AppCompatActivity {
         String Email=regEmail.getEditText().getText().toString();
         String PhoneNo=regPhoneNo.getEditText().getText().toString();
         String Password=regPassword.getEditText().getText().toString();
-        Intent intent = new Intent(getApplicationContext(),VerifyPhoneNo.class);
+        Intent intent = new Intent(getApplicationContext(), VerifyPhoneNo.class);
         intent.putExtra("phoneNo",PhoneNo);
+        intent.putExtra("fullName",FullName);
+        intent.putExtra("email",Email);
+        intent.putExtra("userName",UserName);
         startActivity(intent);
 
         //UserInfomation userInfomation = new UserInfomation(FullName,UserName,Email,PhoneNo,Password);

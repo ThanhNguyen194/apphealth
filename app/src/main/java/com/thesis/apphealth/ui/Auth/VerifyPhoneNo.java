@@ -1,4 +1,4 @@
-package com.thesis.apphealth;
+package com.thesis.apphealth.ui.Auth;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,6 +19,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.thesis.apphealth.R;
 
 import java.util.concurrent.TimeUnit;
 
@@ -97,7 +98,7 @@ public class VerifyPhoneNo extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    Intent intent = new Intent(getApplicationContext(),activity_login.class);
+                    Intent intent = new Intent(getApplicationContext(), activity_login.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
                 } else {
