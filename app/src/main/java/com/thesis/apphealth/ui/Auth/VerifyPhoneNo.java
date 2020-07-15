@@ -17,9 +17,13 @@ import com.google.android.gms.tasks.TaskExecutors;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.thesis.apphealth.R;
+import com.thesis.apphealth.data.UserInfomation;
 
 import java.util.concurrent.TimeUnit;
 
@@ -28,6 +32,11 @@ public class VerifyPhoneNo extends AppCompatActivity {
     String verificationCodeBySystem;
     EditText verifyCodeEnteredByTheUser;
     ProgressBar progressBar;
+    FirebaseDatabase firebaseDatabase;
+    FirebaseUser currentFirebaseUser;
+    DatabaseReference reference;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,7 +101,9 @@ public class VerifyPhoneNo extends AppCompatActivity {
 
     }
     private void signIntheUserByCredential(PhoneAuthCredential credential) {
-        FirebaseAuth firebaseAuth =FirebaseAuth.getInstance();
+        final FirebaseAuth firebaseAuth =FirebaseAuth.getInstance();
+        firebaseDatabase =FirebaseDatabase.getInstance();
+        reference=firebaseDatabase.getReference("users");
         firebaseAuth.signInWithCredential(credential)
                 .addOnCompleteListener(VerifyPhoneNo.this, new OnCompleteListener<AuthResult>() {
             @Override
@@ -100,6 +111,15 @@ public class VerifyPhoneNo extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     Intent intent = new Intent(getApplicationContext(), activity_login.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    String PhoneNo= getIntent().getStringExtra("phoneNo");
+                    String FullName=getIntent().getStringExtra("fullName");
+                    String UserName=getIntent().getStringExtra("userName");
+                    String Email=getIntent().getStringExtra("email");
+                    String Password=getIntent().getStringExtra("password");
+                    currentFirebaseUser = firebaseAuth.getCurrentUser();
+                    String UID= firebaseAuth.getCurrentUser().getUid();
+                    UserInfomation userInfomation = new UserInfomation(FullName,UserName,Email,PhoneNo,Password);
+                    reference.child(UID).setValue(userInfomation);
                     startActivity(intent);
                 } else {
                     // If sign in fails, display a message to the user.

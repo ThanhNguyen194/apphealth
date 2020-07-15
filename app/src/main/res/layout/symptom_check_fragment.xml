@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.symptomcheck.SymptomCheck"
+    android:id="@+id/symptom_check_fragment"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp">
+        <TextView
+        android:id="@+id/title"
+        android:layout_marginTop="20dp"
+        android:textSize="25sp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="@string/asksymptom">
+        </TextView>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/searchsymtombox"
+            android:layout_below="@id/title"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="@dimen/magin">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/symptom"
+                android:inputType="text"
+                android:id="@+id/searchsymtomtext"
+                android:drawableRight="@drawable/ic_search"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:id="@+id/choosesuggesttext"
+            android:layout_marginTop="25dp"
+            android:layout_below="@id/searchsymtombox"
+            android:textSize="15sp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Hoặc chọn các triệu chứng thông dụng sau đây "/>
+        <LinearLayout
+            android:id="@+id/choosesuggestlayout"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_below="@id/choosesuggesttext"
+            android:orientation="vertical"
+            android:layout_marginTop="15dp">
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/dizziness"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:hint="Chóng mặt"
+                    android:background="@color/lightbutton"/>
+                <Button
+                     android:id="@+id/cough"
+                     android:layout_width="80dp"
+                     android:layout_height="wrap_content"
+                     android:layout_marginLeft="10dp"
+                     android:hint="Ho"
+                     android:background="@color/lightbutton"/>
+                <Button
+                android:id="@+id/headache"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:hint="Đau đầu"
+                android:background="@color/lightbutton"/>
+
+            </LinearLayout>
+            <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_below="@id/choosesuggesttext"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp">
+
+                <Button
+            android:id="@+id/bloating"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:hint="Đầy hơi"
+            android:background="@color/lightbutton"/>
+                <Button
+            android:id="@+id/diarhea"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:hint="Tiêu chảy"
+            android:background="@color/lightbutton"/>
+                <Button
+                    android:id="@+id/fever"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:hint="Sốt"
+                    android:background="@color/lightbutton"/>
+        </LinearLayout>
+            <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_below="@id/choosesuggesttext"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp">
+
+        <Button
+            android:id="@+id/musclecramp"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:hint="Chuột rút"
+            android:background="@color/lightbutton"/>
+        <Button
+            android:id="@+id/nausea"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:hint="Buồn nôn"
+            android:background="@color/lightbutton"/>
+        <Button
+            android:id="@+id/fatigue"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:hint="Mệt mỏi"
+            android:background="@color/lightbutton"/>
+        </LinearLayout>
+        </LinearLayout>
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/symptom_choose"
+            android:background="@color/background"
+            android:layout_below="@id/choosesuggestlayout"
+            android:layout_marginTop="20dp">
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chip_group"
+                android:layout_width="match_parent"
+                android:layout_margin="10dp"
+                android:layout_height="match_parent">
+            </com.google.android.material.chip.ChipGroup>
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                app:srcCompat="@drawable/ic_empty"
+                android:layout_gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:id="@+id/emptysymptom"
+                tools:ignore="VectorDrawableCompat" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/emptysymptom"
+                android:id="@+id/emptysymptom_text"
+                android:text="Thêm triệu chứng" />
+        </RelativeLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_symptom"
+            android:background="@color/white"
+            android:layout_below="@id/searchsymtombox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/continuesymptomcheck"
+            android:layout_width="130dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/symptom_choose"
+            android:background="@color/colorbutton"
+            android:hint="Tiếp tục"
+            android:layout_centerHorizontal="true"/>
+</RelativeLayout>

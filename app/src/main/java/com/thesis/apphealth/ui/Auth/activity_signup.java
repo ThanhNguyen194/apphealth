@@ -149,6 +149,7 @@ public class activity_signup extends AppCompatActivity {
         intent.putExtra("fullName",FullName);
         intent.putExtra("email",Email);
         intent.putExtra("userName",UserName);
+        intent.putExtra("password",Password);
         startActivity(intent);
 
         //UserInfomation userInfomation = new UserInfomation(FullName,UserName,Email,PhoneNo,Password);

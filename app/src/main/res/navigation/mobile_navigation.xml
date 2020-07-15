@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mobile_navigation"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/nav_home">
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.thesis.apphealth.ui.home.home"
+        android:label="@string/mainScreen"
+        tools:layout="@layout/home_fragment">
+        <action
+            android:id="@+id/action_nav_home_to_nav_diagnosis2"
+            app:destination="@id/nav_diagnosis" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_searchlocation"
+            app:destination="@id/nav_searchlocation" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_drugreminder"
+            app:destination="@id/nav_drugreminder" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_medicalInfo"
+            app:destination="@id/nav_medicalInfo" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_personalInfor"
+            app:destination="@id/nav_personalInfor" />
+        <action
+            android:id="@+id/action_nav_home_to_askdoctor"
+            app:destination="@id/askdoctor" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_medicalInfo"
+        android:name="com.thesis.apphealth.ui.medicalInformation.medicalInformation"
+        tools:layout="@layout/medical_information_fragment"
+        android:label="@string/medicalmanager"/>
+    <fragment
+        android:id="@+id/nav_personalInfor"
+        android:name="com.thesis.apphealth.ui.personalInformation.personInformation"
+        android:label="@string/personInformation"
+        tools:layout="@layout/person_information_fragment"/>
+    <fragment
+        android:id="@+id/nav_diagnosis"
+        android:name="com.thesis.apphealth.ui.symptomcheck.SymptomCheck"
+        tools:layout="@layout/symptom_check_fragment"
+        android:label="Tự chẩn đoán">
+        <action
+            android:id="@+id/action_nav_diagnosis_to_nav_listdisease"
+            app:destination="@id/nav_listdisease" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_searchlocation"
+        android:name="com.thesis.apphealth.ui.searchmedlocation.searchlocation"
+        tools:layout="@layout/searchlocation_fragment"
+        android:label="Tìm cơ sở y tế"/>
+    <fragment
+        android:id="@+id/nav_drugreminder"
+        android:name="com.thesis.apphealth.ui.drugreminder.drugreminder"
+        tools:layout="@layout/drugreminder_fragment"
+        android:label="Đặt lịch uống thuốc">
+        <action
+            android:id="@+id/action_nav_drugreminder_to_nav_addreminder"
+            app:destination="@id/nav_addreminder" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_listdisease"
+        android:name="com.thesis.apphealth.ui.listdisease.listdiseaseFragment"
+        tools:layout="@layout/fragment_listdisese"
+        android:label="Kết quả">
+        <action
+            android:id="@+id/action_nav_listdisease_to_diseaseInformation"
+            app:destination="@id/diseaseInformation" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_addreminder"
+        android:name="com.thesis.apphealth.ui.drugreminder.add_reminder"
+        android:label="Thêm nhắc nhở"
+        tools:layout="@layout/add_reminder_fragment"/>
+    <fragment
+        android:label="Thông tin bệnh"
+        android:name="com.thesis.apphealth.ui.diagnosisresult.diagnosis_result"
+        android:id="@+id/diseaseInformation"
+        tools:layout="@layout/diagnosis_result_fragment">
+        <action
+            android:id="@+id/action_diseaseInformation_to_sendsymptom"
+            app:destination="@id/sendsymptom" />
+    </fragment>
+    <fragment
+        android:id="@+id/askdoctor"
+        android:name="com.thesis.apphealth.ui.askdoctor.askdoctor"
+        android:label="Hỏi bác sĩ"
+        tools:layout="@layout/askdoctor_fragment">
+        <action
+            android:id="@+id/action_askdoctor_to_sendsymptom"
+            app:destination="@id/sendsymptom" />
+        <action
+            android:id="@+id/action_askdoctor_to_listresult"
+            app:destination="@id/listresult" />
+    </fragment>
+    <fragment
+        android:label="Gửi triệu chưng"
+        android:name="com.thesis.apphealth.ui.askdoctor.sendsymptom"
+        android:id="@+id/sendsymptom"
+        tools:layout="@layout/sendsymptom_fragment">
+        <action
+            android:id="@+id/action_sendsymptom_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/listresult"
+        android:name="com.thesis.apphealth.ui.askdoctor.resultfromdoctorFragment"
+        tools:layout="@layout/fragment_resultfromdoctor_list"
+        android:label=" "/>
+
+</navigation>

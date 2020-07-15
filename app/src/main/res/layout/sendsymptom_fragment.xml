@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.drugreminder.add_reminder"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp">
+        <EditText
+            android:id="@+id/inputime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập thời gian"
+            />
+        <EditText
+            android:id="@+id/inputdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập ngày"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/symptom_input"
+            android:orientation="vertical"
+            android:layout_height="140dp">
+            <EditText
+                android:id="@+id/symptom_inputtext"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginLeft="30dp"
+                android:hint="Nhập triệu chứng"
+                android:textSize="25dp"
+                android:lines="4"
+                android:minLines="4"
+                android:inputType="textCapWords|textMultiLine"
+                android:layout_marginRight="16dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/add_reminder_layout_top"
+            android:orientation="vertical"
+            android:layout_height="140dp">
+            <EditText
+                android:id="@+id/inputdrug"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginLeft="30dp"
+                android:hint="Nhập thuốc đang dùng"
+                android:textSize="25dp"
+                android:lines="4"
+                android:minLines="4"
+                android:inputType="textCapWords|textMultiLine"
+                android:layout_marginRight="16dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/medicalhistory_input"
+            android:orientation="vertical"
+            android:layout_height="140dp">
+            <EditText
+                android:id="@+id/medicalhistory_input_text"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginLeft="30dp"
+                android:hint="Nhập tiền sử bệnh lý"
+                android:textSize="25dp"
+                android:lines="4"
+                android:minLines="4"
+                android:inputType="textCapWords|textMultiLine"
+                android:layout_marginRight="16dp"/>
+        </LinearLayout>
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/sendsymptom_button"
+            android:text="Gửi"
+            android:background="@color/colorbutton"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"/>
+    </LinearLayout>
+</ScrollView>

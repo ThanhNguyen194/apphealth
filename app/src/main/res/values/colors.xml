@@ -9,4 +9,6 @@
     <color name="colorbutton">#61C3AA</color>
     <color name="colorbackground">#FFFFFF</color>
     <color name="lightGray">#979696</color>
+    <color name="lightbutton">#effafd</color>
+    <color name="background">#eef4f7</color>
 </resources>

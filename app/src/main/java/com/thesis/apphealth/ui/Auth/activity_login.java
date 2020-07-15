@@ -23,6 +23,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.thesis.apphealth.MainActivity;
 import com.thesis.apphealth.R;
+import com.thesis.apphealth.ui.askdoctor.sendsymptom;
 
 public class activity_login extends AppCompatActivity {
     Button callSignUp,login_btn;
@@ -65,6 +66,11 @@ public class activity_login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 loginUser(view);
+                String userEnteredUsername=username.getEditText().getText().toString().trim();
+                Bundle bundle=new Bundle();
+                bundle.putString("userName",userEnteredUsername);
+                sendsymptom fragment=new sendsymptom();
+                fragment.setArguments(bundle);
             }
         });
     }

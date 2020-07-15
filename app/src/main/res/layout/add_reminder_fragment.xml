@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.drugreminder.add_reminder">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/add_reminder_layout_top"
+        android:orientation="vertical"
+        android:layout_height="140dp">
+        <EditText
+            android:id="@+id/add_reminder_title"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_marginLeft="70dp"
+            android:hint="Nhập loại thuốc"
+            android:textSize="25dp"
+            android:lines="4"
+            android:minLines="4"
+            android:inputType="textCapWords|textMultiLine"
+            android:layout_marginRight="16dp"/>
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/add_reminder_layout_top">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:id="@+id/details"
+                android:textSize="15dp"
+                android:text="Chi tiết"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="70dp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:id="@+id/date"
+                android:layout_height="70dp">
+
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:id="@+id/date_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="32dp"
+                    android:src="@drawable/ic_date" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/date_icon"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ngày"
+                        android:id="@+id/date_text"
+                        android:textSize="15sp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:id="@+id/set_date"/>
+                </LinearLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:id="@+id/time"
+                android:layout_height="70dp">
+
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:id="@+id/time_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="32dp"
+                    android:src="@drawable/ic_access_time" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/time_icon"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Thời gian"
+                        android:id="@+id/time_text"
+                        android:textSize="15sp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:id="@+id/set_time"/>
+                </LinearLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:id="@+id/repeat"
+                android:layout_height="70dp">
+
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:id="@+id/repeat_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="32dp"
+                    android:src="@drawable/ic_repeat" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/repeat_icon"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nhắc lại"
+                        android:id="@+id/repeat_text"
+                        android:textSize="15sp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:id="@+id/set_repeat"/>
+                </LinearLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:id="@+id/set_repeatation_interval"
+                android:layout_height="70dp">
+
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:id="@+id/repeatation_interval_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="32dp"
+                    android:src="@drawable/ic_updown" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/repeatation_interval_icon"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Số lần "
+                        android:id="@+id/repeatation_interval_text"
+                        android:textSize="15sp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:id="@+id/repeatation_interval"/>
+                </LinearLayout>
+                <Switch
+                    android:id="@+id/repeat_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_alignParentRight="true"
+                    android:checked="true"
+                    android:textOn="On"
+                    android:textOff="Off"
+                    android:layout_centerVertical="true"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:id="@+id/set_note"
+                android:layout_height="70dp">
+
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:id="@+id/note_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="32dp"
+                    android:src="@drawable/ic_subject_black_24dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/note_icon"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Ghi chú"
+                        android:id="@+id/note_text"
+                        android:textSize="15sp"
+                        android:lines="4"
+                        android:minLines="4"
+                        android:inputType="textCapWords|textMultiLine"
+                        android:layout_marginRight="16dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:id="@+id/note"/>
+                </LinearLayout>
+            </RelativeLayout>
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="@color/colorbutton"
+                android:hint="Lưu"
+                android:gravity="center"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/add_reminder_layout_top"/>
+</RelativeLayout>
